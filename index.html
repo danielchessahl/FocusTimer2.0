@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Temporizador estilo pomodoro">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <title>FocusTimer2.0 - Pomodoro</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-svg">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script type="module" src="./src/main.js" defer></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <button id="toggle-mode">
+        <span class="sr-only">Ativar Light Mode</span>
+        <i class="ph-bold ph-sun"></i>
+        <i class="ph-bold ph-moon"></i>
+      </button>
+      
+      <main>
+        <div class="part1">
+        <section id="timer" class="flex">
+          <span id="minutes">00</span>
+          <span>:</span>
+          <span id="seconds">00</span>
+        </section>
+
+          <section id="controls" class="flex">
+            <button 
+              data-action="toggleRunning"
+              class="ph ph-play-circle">
+              <span class="sr-only">Iniciar contador</span>
+            </button>
+            <button 
+              data-action="toggleRunning"
+              class="ph ph-pause-circle">
+              <span class="sr-only">Pausar contador</span>
+            </button>
+            <button 
+              data-action="set"
+              class="ph ph-timer">
+              <span class="sr-only">Ajustar contador</span>
+            </button>
+            <button 
+              data-action="reset"
+              class="ph ph-stop-circle">
+              <span class="sr-only">Reiniciar contador</span>
+            </button>
+            <button 
+              data-action="plusButton"
+              class="ph ph-plus-circle">
+              <span class="sr-only">Aumentar Time</span>
+            </button>
+            <button 
+              data-action="minusButton"
+              class="ph ph-minus-circle">
+              <span class="sr-only">Diminuir Time</span>
+            </button>
+          </section>
+        </div>
+        <div class="part2">
+          <section id="sounds" class="flex">
+              <button 
+                data-action="btnForest"
+                class="ph ph-tree cards">
+                <span class="sr-only">Floresta</span>
+              </button>
+              <button 
+                 data-action="btnRain" 
+                 class="ph ph-cloud-rain cards">                
+                 <span class="sr-only">Chuva</span>
+              </button>
+              <button 
+                data-action="btnCoffe"
+                class="ph ph-storefront cards">
+                <span class="sr-only">CoffePlace</span>
+              </button>
+              <button 
+                data-action="btnFire"
+                class="ph ph-fire cards">
+                <span class="sr-only">FirePlace</span>
+              </button>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

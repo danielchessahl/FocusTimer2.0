@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --hue: 194;
+  --bg-color:hsla(var(--hue), 5%, 7%, 1);
+  --text-color:hsla(var(--hue), 6%, 218%, 1);
+  --controls-bg-color:hsla(var(--hue), 6%, 218%, 1);
+  --button-primary: hsla(var(--hue), 6%, 21%, 1);
+  --button-secundary: hsla(var(--hue), 0%, 100%, 1);
+  --button-cards: hsla(var(--hue), 9%, 89%, 1);
+  --button-cards-secundary: hsla(var(--hue), 97%, 31%, 1);
+  
+
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+html.light {
+  --bg-color:hsla(var(--hue), 40%, 98%, 1);
+  --text-color:hsla(var(--hue), 5%, 7%, 1);
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+  display: none;
+}
+
+#toggle-mode {
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  line-height: 0;
+  color: var(--text-color);
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app {
+  display: grid;
+  justify-items: center;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  gap: 19.2rem;
+
+}
+
+.part1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;  
+}
+
+.flex {
+  display: flex;
+}
+
+#timer {
+  justify-content: center;
+  font-size: 12.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+}
+
+#controls {
+  margin-top: 1.6rem;
+  padding: 2.2rem 4rem;
+  gap: 4rem;
+
+}
+
+#sounds {
+  margin-top: 1.6rem;
+  padding: 2.2rem 4rem;
+
+  display: grid;
+  grid-template-columns: 80px 200px;
+  justify-items: center;
+  gap: 3.2rem;
+
+}
+
+.cards {
+  background: var(--button-cards);
+  color: var(--button-primary);
+  width: 138px;
+  height: 152px;
+  border-radius: 2.4rem;
+
+  cursor: pointer;
+
+  transition: all 200ms;
+}
+
+.cards:hover {
+  background-color: #bfbfc2;
+  transform: scale(1.1);
+  opacity: 0.4;
+}
+
+
+button {
+  background-color: transparent;
+  border: 0;
+  color: var(--primary-color);
+
+  cursor: pointer;
+
+  font-size: 6.4rem;
+}
+
+.music-on {
+  color: var(--button-secundary);
+  background-color: var(--button-cards-secundary)
+
+}
+
+/*Controls*/
+.running .ph-play-circle, 
+.running .ph-timer,
+.music-on .ph-speaker-none,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle{
+  display: none;
+}
